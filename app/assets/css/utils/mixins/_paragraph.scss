@@ -1,0 +1,5 @@
+@mixin paragraph() {
+  font-family: 'Georgia', serif;
+  @include rem(font-size, 21);
+  @include rem(line-height, 29);
+}

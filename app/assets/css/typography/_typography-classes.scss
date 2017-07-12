@@ -1,0 +1,78 @@
+// @font-face {
+//   font-family: 'rouble';
+//   font-style: normal;
+//   font-weight: normal;
+//   src: url('../fonts/rub/rouble-webfont.eot');
+//   src: url('../fonts/rub/rouble-webfont.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/rub/rouble-webfont.woff') format('woff'),
+//        url('../fonts/rub/rouble-webfont.ttf') format('truetype');  
+// }
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6  {
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+
+.h1, .h2, .h3, .h4 {
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.h1 {
+  line-height: 1;
+  @include rem(font-size, 48);
+}
+
+.h2 {
+  @include rem(font-size, 36);
+}
+
+.h3 {
+  @include rem(font-size, 24);
+}
+
+.h4 {
+  @include rem(font-size, 21);
+}
+
+.clear {
+  clear: both;
+}
+
+.i-center-text {
+  text-align: center;
+}
+
+.i-left-text {
+  text-align: left;
+}
+
+.i-right-text {
+  text-align: right;
+}
+
+.i-uppercase {
+  text-transform: uppercase;
+}
+
+.i-nowrap {
+  white-space: nowrap;
+}
+
+.i-ellipsis {
+  @include ellipsis;
+}
+
+.i-justify {
+  text-align: justify;
+}
+
+.i-underline {
+  text-decoration: underline;
+}

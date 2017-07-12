@@ -1,0 +1,77 @@
+input, textarea {
+
+  &:-ms-input-placeholder {
+    color: #9F9F9F;
+  }
+
+  &::-webkit-input-placeholder {
+    color: #9F9F9F;
+  }
+
+  &::-moz-placeholder {
+    color: #9F9F9F;
+    opacity: 1;
+  }
+
+  &:focus:-ms-input-placeholder {
+    color: transparent;
+  }
+
+  &:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  &:focus::-moz-placeholder {
+    color: transparent;
+  }
+}
+
+@media all and (-webkit-min-device-pixel-ratio:0) {
+  input[type="search"] {
+    border-radius: none;
+    height: 30px; /*хак для Chrome и Safari */
+  }
+}
+
+.input,
+.select {
+  background: #fff;
+  border: 1px solid #616161;
+  display: inline-block;
+  vertical-align: baseline;
+  width: 100%;
+
+  &:focus {
+    box-shadow: inset 0 3px 5px rgba(#000, 0.125);
+    outline: none;
+  }
+}
+
+.select,
+.input_text,
+.input_search,
+.input_textarea {
+  transition: border 0.15s linear,  box-shadow 0.15s linear;
+}
+
+.input_text,
+.input_textarea {
+  box-shadow: inset 0 1px 1px rgba(#000, .075);
+  padding: 5px 10px;
+  @include rem(height, 30);
+}
+
+.input_textarea {
+  height: auto;
+  resize: none;
+}
+
+.input_text[disabled],
+.input_textarea[disabled] {
+  opacity: .4;
+}
+
+.select {
+  padding: 0 5px;
+  @include rem(height, 30);
+}

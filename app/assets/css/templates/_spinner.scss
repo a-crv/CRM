@@ -1,0 +1,10 @@
+.spinner {
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.spinner__img {
+  display: inline-block;
+  @include background-image("spinner.svg", 65px, 65px);
+}

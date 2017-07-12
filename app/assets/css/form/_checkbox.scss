@@ -1,0 +1,227 @@
+// My checkbox
+$checkbox-size: 20;
+$checkbox-border: #ccc;
+$checkbox-color: lighten(#000, 33.5%); //555
+
+@mixin checkbox-variant($parent, $checkColor, $color, $colorHover, $colorActiveHover) {
+
+  #{$parent} {
+
+    &:hover {
+
+      .b-checkbox__checkbox-replace::before {
+        background-color: $colorHover;
+      }
+
+      input[type="checkbox"]:checked + .b-checkbox__checkbox-replace::before {
+        background-color: $colorActiveHover;
+        border-color: $colorActiveHover;
+      }
+    }
+
+    input[type="checkbox"]:checked + .b-checkbox__checkbox-replace {
+
+      &::before {
+        background-color: $color;
+        border-color: $color;
+      }
+
+      &::after {
+        color: $checkColor;
+      }
+    }
+  }
+}
+
+.b-checkbox {
+  line-height: 1;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  @include rem(padding-left, $checkbox-size);
+
+  .b-checkbox__checkbox-replace {
+    display: inline-block;
+    font-weight: normal;
+    padding-left: 5px;
+    position: relative;
+    vertical-align: top;
+    @include rem(line-height, ($checkbox-size + 5px));
+
+    &::before {
+      background-color: #fff;
+      border: 1px solid $checkbox-border;
+      content: "";
+      display: inline-block;
+      @include absolute-rt(100%, 2px);
+      @include border-radius(3px);
+      @include size-rem($checkbox-size, $checkbox-size);
+      @include transition(border 0.15s ease-in-out, color 0.15s ease-in-out);
+    }
+
+    &::after {
+      color: $checkbox-color;
+      display: inline-block;
+      text-align: center;
+      @include absolute-rt(100%, 2px);
+      @include rem(font-size, 13);
+      @include rem(line-height, $checkbox-size);
+      @include size-rem($checkbox-size, $checkbox-size);
+    }
+  }
+
+  .b-checkbox__checkbox-replace_without-txt {
+    padding-left: 0;
+  }
+
+  input[type="checkbox"] {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    @include rem(margin, 5, 0, 0, (-$checkbox-size));
+
+    &:focus + .b-checkbox__checkbox-replace::before {
+      @include tab-focus();
+    }
+
+    &:checked + .b-checkbox__checkbox-replace::after {
+      content: $fa-var-check;
+      font-family: 'FontAwesome';
+    }
+
+    &:disabled + .b-checkbox__checkbox-replace {
+      opacity: 0.35;
+
+      &::before {
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.b-checkbox_circle .b-checkbox__checkbox-replace::before {
+  border-radius: 50%;
+}
+
+@include checkbox-variant('.b-checkbox_secondary', $base-text-color, #3df29f, #3DF29F, #2eb779);
+@include checkbox-variant('.b-checkbox_primary', #fff, #353d49, #333, #353D49);
+
+
+// My radios
+$radio-size: 20;
+$radio-size-inner: 8;
+$radio-color: #E6E6E6;
+$radio-color-inner: #fff;
+
+@mixin radio-variant($parent, $checkColor, $color, $colorHover, $colorActiveHover) {
+
+  #{$parent} {
+
+    &:hover {
+
+      .b-radio__radio-replace::before {
+        background-color: $colorHover;
+      }
+
+      input[type="radio"]:checked + .b-radio__radio-replace::before {
+        background-color: $colorActiveHover;
+        border-color: $colorActiveHover;
+      }
+    }
+
+    input[type="radio"]:checked + .b-radio__radio-replace {
+
+      &::before {
+        background-color: $color;
+        border-color: $color;
+      }
+
+      &::after {
+        color: $checkColor;
+      }
+    }
+
+    input[type="radio"]:checked + .b-radio__radio-replace_without-txt {
+
+      &::before {
+        background-color: $color;
+        border-color: $color;
+      }
+
+      &::after {
+        background-color: $checkColor;
+      }
+    }
+  }
+}
+
+.b-radio {
+  line-height: 1;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  @include rem(padding-left, $radio-size);
+
+  .b-radio__radio-replace {
+    display: inline-block;
+    font-weight: normal;
+    line-height: $radio-size + 5px;
+    margin: 0;
+    position: relative;
+    padding-left: 5px;
+    vertical-align: top;
+
+    &::before {
+      background-color: #fff;
+      border: 1px solid $radio-color;
+      content: "";
+      display: inline-block;
+      @include absolute-rt(100%, 2px);
+      @include border-radius(50%);
+      @include size-rem($radio-size, $radio-size);
+      @include transition(border 0.15s ease-in-out);
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      @include absolute-rt(100%, 2px);
+      @include border-radius(50%);
+      @include rem(margin, ($radio-size/2 - $radio-size-inner/2), ($radio-size/2 - $radio-size-inner/2), 0, 0);
+      @include scale(0, 0);
+      @include size-rem($radio-size-inner, $radio-size-inner);
+      @include transition(.1s cubic-bezier(.8,-0.33,.2,1.33));
+      //curve - http://cubic-bezier.com/#.8,-0.33,.2,1.33
+    }
+  }
+
+  input[type="radio"] {
+    // margin-left: -$radio-size + px;
+    opacity: 0;
+    position: absolute;
+    @include rem(margin, 5, 0, 0, (-$radio-size));
+
+    &:focus + label::before {
+      @include tab-focus();
+    }
+
+    &:checked + label::after {
+      @include scale(1, 1);
+    }
+
+    &:disabled + label {
+      opacity: 0.65;
+
+      &::before {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &.radio-inline {
+    margin-top: 0;
+  }
+}
+
+@include radio-variant('.b-radio_secondary', $base-text-color, #3df29f, #3DF29F, #2eb779);
+@include radio-variant('.b-radio_primary', #fff, #353d49, #333, #353D49);

@@ -1,0 +1,26 @@
+@mixin vh($screenHeight, $property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $vhValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  } 
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $vhValues: #{$vhValues + $value / ($screenHeight / 100)}vh;
+
+    @if $i < $max {
+      $vhValues: #{$vhValues + " "};
+    }
+  } 
+  
+  #{$property}: $pxValues; 
+  #{$property}: $vhValues; 
+}

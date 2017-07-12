@@ -1,0 +1,22 @@
+.table-list {
+  margin-bottom: 20px;
+  @include rem(padding, 12);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.table-list__title {
+  border-bottom: 1px solid #616161;
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  @include rem(font-size, 20);
+}
+
+.table-list__content {}
+
+.table-list__table {
+  @include rem(margin, -12);
+}

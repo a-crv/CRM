@@ -1,0 +1,65 @@
+%normal {
+  font-weight: normal;
+}
+
+%bold {
+  font-weight: bold;
+}
+
+%italic {
+  font-style: italic;
+}
+
+%underline {
+  text-decoration: underline;
+}
+
+%no-underline {
+  text-decoration: none;
+}
+
+%strike {
+  text-decoration: line-through;
+}
+
+%overline {
+  text-decoration: overline;
+}
+
+%justify {
+  text-align: justify;
+}
+
+%left-text {
+  text-align: left;
+}
+
+%right-text {
+  text-align: right;
+}
+
+%center-text {
+  text-align: center;
+}
+
+%no-style {
+  font-style: normal;
+}
+
+%word-wrap {
+  word-wrap: break-word;
+}
+
+%nowrap {
+  white-space: nowrap;
+}
+
+%paragraph {
+  font-family: 'Georgia', serif;
+  @include rem(font-size, 21);
+  @include rem(line-height, 29);
+}
+
+%ellipsis {
+  @include ellipsis;
+}

@@ -1,0 +1,11 @@
+.header {
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.header__logo {
+  // width: 192px;
+  display: inline-block;
+  @include background-image('logo.svg', 192px, 60px);
+}

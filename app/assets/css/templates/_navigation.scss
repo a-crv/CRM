@@ -1,0 +1,15 @@
+.navigation {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation__item {
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: baseline;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,36 @@
+.btn {
+  border: 0;
+  color: #fff !important;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  padding: 10px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: baseline;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn_primary {
+  background-color: #42bd41;
+
+  &:hover {
+    background-color: lighten(#42bd41, 5%);
+  }
+}
+
+.btn_secondary {
+  background-color: #286090;
+
+  &:hover {
+    background-color: lighten(#286090, 5%);
+  }
+}
+
+.btn_block {
+  display: block;
+}

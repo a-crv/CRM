@@ -1,0 +1,3 @@
+const GET_MEMBER_GRID_FIELDS = 'GET_MEMBER_GRID_FIELDS';
+
+export { GET_MEMBER_GRID_FIELDS as default };

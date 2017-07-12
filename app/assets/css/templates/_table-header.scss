@@ -1,0 +1,11 @@
+.table-header {
+  @include clear;
+}
+
+.table-header__breadcrumbs {
+  float: left;
+}
+
+.table-header__nav {
+  float: right;
+}

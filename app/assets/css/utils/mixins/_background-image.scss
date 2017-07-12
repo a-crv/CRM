@@ -1,0 +1,8 @@
+@mixin background-image($url, $width, $height) {
+  background-image: url("/assets/img/#{$url}");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: $width auto;
+  height: $height;
+  width: $width;
+}

@@ -1,0 +1,54 @@
+.login-form {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.login-form_fade-in-down {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+.login-form__title {
+	letter-spacing: .08em;
+  margin: 0;
+  text-align: center;
+  @include rem(font-size, 64);
+}
+
+.login-form__input,
+.login-form__submit {
+  border-radius: 3px;
+  border: 0;
+  @include rem(font-size, 21);
+  @include rem(margin-bottom, 10);
+  @include rem(padding, 10);
+}
+
+.login-form__input {
+	color: #0D296A;
+}
+
+.login-form__submit {
+  background-color: #15AF68;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+.login-form__submit_loading {
+  background-image: url("/assets/img/loading.gif");
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
