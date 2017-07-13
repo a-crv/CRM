@@ -3,33 +3,6 @@ const GET_DOCS_DATA_REQUEST = 'GET_DOCS_DATA_REQUEST';
 const GET_DOCS_DATA_SUCCESS = 'GET_DOCS_DATA_SUCCESS';
 const GET_DOCS_DATA_FAIL = 'GET_DOCS_DATA_FAIL';
 
-// function getDocsData(url) {
-//   return (dispatch) => {
-//     dispatch({
-//       type: 'GET_DOCS_DATA_REQUEST'
-//     });
-
-//     ajax({
-//       url,
-//       method: 'GET',
-//       dataType: 'json',
-//       beforeSend: (xhr) => {
-//         xhr.setRequestHeader('Authorization', `Basic ${btoa('feuser:receipts1')}`);
-//       }
-//     }).done((response) => {
-//       dispatch({
-//         type: 'GET_DOCS_DATA_SUCCESS',
-//         payload: response
-//       });
-//     }).fail((response) => {
-//       dispatch({
-//         type: 'GET_DOCS_DATA_FAIL',
-//         payload: response
-//       });
-//     });
-//   };
-// }
-
 function getDocsData(url) {
   return (dispatch) => {
     dispatch({

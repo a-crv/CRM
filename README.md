@@ -1,2 +1,2 @@
-# Messenger
-This is a test messsenger on react-redux
+# CRM
+This is CRM on react-redux
